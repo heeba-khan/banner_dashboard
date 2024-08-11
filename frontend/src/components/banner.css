@@ -1,0 +1,33 @@
+
+  .banner {
+    background: #B9EBCF; 
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner h1 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .banner p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .banner a {
+    color: #F4A6B0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .banner a:hover {
+    text-decoration: underline;
+  }
+  

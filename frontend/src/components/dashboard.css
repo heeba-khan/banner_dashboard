@@ -1,0 +1,51 @@
+
+.dashboard {
+    background: #FDF4C1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dashboard h2 {
+    text-align: center;
+    color: #333;
+  }
+  .dashboard form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard input[type="text"],
+  .dashboard input[type="number"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .dashboard button {
+    padding: 10px;
+    background: #D6A3E4; 
+    border: none;
+    color: #FFFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+  }
+  
+  .dashboard button:hover {
+    background: #B77CE2; 
+  }
+  
+  .dashboard .toggle-button {
+    margin-top: 10px;
+    background: #A2C2E6; 
+  }
+  
