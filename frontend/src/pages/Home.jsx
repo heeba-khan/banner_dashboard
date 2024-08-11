@@ -18,13 +18,14 @@ import './home.css'
 
 const Home = () => {
     const [currentBanner, setCurrentBanner] = useState(null);
-  
+    const [isVisible, setIsVisible] = useState(true); // Set to true to show the banner by default
+
     return (
-      <div className='container'>
-        <Banner currentBanner={currentBanner} />
+      <div className="container">
+        <Banner currentBanner={currentBanner} isVisible={isVisible} />
         <Dashboard setCurrentBanner={setCurrentBanner} />
       </div>
     );
-  };
+};
 
 export default Home;
