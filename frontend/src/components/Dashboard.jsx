@@ -14,7 +14,7 @@ const Dashboard = ({ setCurrentBanner }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formattedLink = link.startsWith('http://') || link.startsWith('https://') ? link : `http://${link}`;
-    const response = await axios.post('https://banner-dashboard-backend.vercel.app/api/banners', {
+    const response = await axios.post('https://banner-dashboard-backend.vercel.app/', {
       description,
       timer,
       link:formattedLink,
