@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './dashboard.css'
+const backendurl=import.meta.env.VITE_BACKEND_URL
 
 const Dashboard = ({ setCurrentBanner }) => {
   const [description, setDescription] = useState('');
@@ -13,7 +14,7 @@ const Dashboard = ({ setCurrentBanner }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formattedLink = link.startsWith('http://') || link.startsWith('https://') ? link : `http://${link}`;
-    const response = await axios.post('https://banner-backend-lu58fle7h-heebas-projects.vercel.app', {
+    const response = await axios.post(backendurl, {
       description,
       timer,
       link:formattedLink,
@@ -30,7 +31,7 @@ const Dashboard = ({ setCurrentBanner }) => {
   const toggleVisibility = async () => {
     if (banner) {
       const updatedBanner = { ...banner, visibility: !banner.visibility };
-      await axios.put(`https://banner-backend-lu58fle7h-heebas-projects.vercel.app/${banner.id}`, updatedBanner);
+      await axios.put(`${backendurl}/${banner.id}`, updatedBanner);
       setBanner(updatedBanner);
       setCurrentBanner(updatedBanner); 
     }
@@ -38,7 +39,7 @@ const Dashboard = ({ setCurrentBanner }) => {
 
   useEffect(() => {
     const fetchBanner = async () => {
-      const response = await axios.get('https://banner-backend-lu58fle7h-heebas-projects.vercel.app'); 
+      const response = await axios.get(backendurl); 
       if (response.data.length > 0) {
         const latestBanner = response.data[0]; // Assuming the first one is the latest
         setBanner(latestBanner);
