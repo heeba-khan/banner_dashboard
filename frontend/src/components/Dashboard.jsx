@@ -14,7 +14,7 @@ const Dashboard = ({ setCurrentBanner }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formattedLink = link.startsWith('http://') || link.startsWith('https://') ? link : `http://${link}`;
-    const response = await axios.post('https://banner-dashboard-backend.vercel.app/', {
+    const response = await axios.post('https://banner-dashboard-backend.vercel.app/api/banners', {
       description,
       timer,
       link:formattedLink,
@@ -31,7 +31,7 @@ const Dashboard = ({ setCurrentBanner }) => {
   const toggleVisibility = async () => {
     if (banner) {
       const updatedBanner = { ...banner, visibility: !banner.visibility };
-      await axios.put(`https://banner-dashboard-backend.vercel.app/${banner.id}`, updatedBanner);
+      await axios.put(`https://banner-dashboard-backend.vercel.app/api/banners${banner.id}`, updatedBanner);
       setBanner(updatedBanner);
       setCurrentBanner(updatedBanner); 
     }
@@ -39,7 +39,7 @@ const Dashboard = ({ setCurrentBanner }) => {
 
   useEffect(() => {
     const fetchBanner = async () => {
-      const response = await axios.get('https://banner-dashboard-backend.vercel.app/'); 
+      const response = await axios.get('https://banner-dashboard-backend.vercel.app/api/banners'); 
       if (response.data.length > 0) {
         const latestBanner = response.data[0]; // Assuming the first one is the latest
         setBanner(latestBanner);
