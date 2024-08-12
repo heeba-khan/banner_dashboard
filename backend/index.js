@@ -8,7 +8,7 @@ const app=express()
 const PORT=process.env.PORT||5000;
 app.use(express.json());
 app.use(cors({
-  origin: 'https://banner-backend-4fy9kg4yq-heebas-projects.vercel.app', 
+  origin: 'https://banner-7uj2lzdjc-heebas-projects.vercel.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   credentials: true, 
 }));
