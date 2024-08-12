@@ -1,0 +1,20 @@
+{
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "commands": {
+        "build": "npm install",
+        "start": "node index.js"
+      }
+    },
+    "deploy": {
+      "env": {
+        "DB_HOST": "loaclhost",
+        "DB_USER": "heeba",
+        "DB_PASSWORD": "Heeba85521@",
+        "DB_NAME": "myDatabase"
+      }
+    }
+  }
+  
