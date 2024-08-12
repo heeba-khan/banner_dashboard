@@ -30,7 +30,7 @@ const Dashboard = ({ setCurrentBanner }) => {
   const toggleVisibility = async () => {
     if (banner) {
       const updatedBanner = { ...banner, visibility: !banner.visibility };
-      await axios.put(https://banner-dashboard-backend.vercel.app/api/banners/${banner.id}, updatedBanner);
+      await axios.put(`https://banner-dashboard-backend.vercel.app/api/banners/${banner.id}`, updatedBanner);
       setBanner(updatedBanner);
       setCurrentBanner(updatedBanner); 
     }
